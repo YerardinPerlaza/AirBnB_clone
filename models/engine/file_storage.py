@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Define class FileStorage"""
 import json
-import models
 from models.base_model import BaseModel
 
 
@@ -26,7 +25,7 @@ class FileStorage:
         for key, val in FileStorage.__objects.items():
             objects_dict[key] = val.to_dict()
 
-        with open(FileStorage.__file_path, mode='w', encoding="UTF8") as fd:
+        with open(FileStorage.__file_path, mode='w', encoding="UTF-8") as fd:
             json.dump(objects_dict, fd)
 
     def reload(self):
@@ -35,8 +34,7 @@ class FileStorage:
             with open(FileStorage.__file_path, encoding="UTF8") as fd:
                 FileStorage.__objects = json.load(fd)
             for key, val in FileStorage.__objects.items():
-                class_name = val["__class__"]
-                class_name = models.classes[class_name]
-                FileStorage.__objects[key] = class_name(**val)
+                val = eval(val["__class__"])(**val)
+                self.__objects[key] = val
         except FileNotFoundError:
             pass

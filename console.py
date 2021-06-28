@@ -12,19 +12,19 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = ("(hbnb) ")
 
-    def _quit(self, args):
+    def do_quit(self, args):
         """Quit command to exit the program"""
         return True
 
-    def _EOF(self, args):
+    def do_EOF(self, args):
         """exit the program"""
         return True
 
-    def _emptyline(self):
+    def emptyline(self):
         """an empty line"""
         pass
 
-    def _create(self, args):
+    def do_create(self, args):
         """Creates a new instance of BaseModel"""
         if len(args) == 0:
             print("** class name missing **")
@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
         except:
             print("** class doesn't exist **")
 
-    def _show(self, args):
+    def do_show(self, args):
         """Prints string repr of an instance based on class name and id"""
         args = shlex.split(args)
         if len(args) == 0:
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
         except KeyError:
             print("** no instance found **")
 
-    def _destroy(self, args):
+    def do_destroy(self, args):
         """Deletes an instance based on the class name and id"""
         args = shlex.split(args)
         if len(args) == 0:
@@ -89,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         storage.save()
 
-    def _all(self, args):
+    def do_all(self, args):
         """Prints all string representation of all"""
         obj_list = []
         storage = FileStorage()
@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
         except AttributeError:
             pass
         setattr(obj_value, args[2], args[3])
-        obj_value.save()"'")
+        obj_value.save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
