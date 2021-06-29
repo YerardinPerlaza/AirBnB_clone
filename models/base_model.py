@@ -43,6 +43,7 @@ class BaseModel:
         """ dictionary representation of basemodel"""
         c_dict = dict(self.__dict__)
         c_dict['__class__'] = self.__class__.__name__
-        c_dict['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        c_dict['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        c_dict['created_at'] = self.created_at.isoformat()
+        c_dict['updated_at'] = self.updated_at.isoformat()
+
         return c_dict
