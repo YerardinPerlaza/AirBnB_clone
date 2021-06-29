@@ -3,6 +3,12 @@
 import json
 from models.base_model import BaseModel
 import models
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage:
@@ -35,8 +41,7 @@ class FileStorage:
             with open(FileStorage.__file_path, encoding="UTF8") as fd:
                 FileStorage.__objects = json.load(fd)
             for key, val in FileStorage.__objects.items():
-                class_name = val["__class__"]
-                class_name = models.classes[class_name]
-                FileStorage.__objects[key] = class_name(**val)
+                val = eval(val["__class__"])(**val)
+                self.__objects[key] = val
         except FileNotFoundError:
             pass
