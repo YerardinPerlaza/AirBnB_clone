@@ -2,7 +2,6 @@
 """ Define class FileStorage"""
 import json
 from models.base_model import BaseModel
-import models
 from models.user import User
 from models.place import Place
 from models.state import State
