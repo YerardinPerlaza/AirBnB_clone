@@ -17,9 +17,9 @@ class BaseModel:
             models.storage.new(self)
         else:
             kwargs["created_at"] = datetime.strptime(kwargs["created_at"],
-                                                    "%Y-%m-%dT%H:%M:%S.%f")
+                                                     "%Y-%m-%dT%H:%M:%S.%f")
             kwargs["updated_at"] = datetime.strptime(kwargs["updated_at"],
-                                                    "%Y-%m-%dT%H:%M:%S.%f")
+                                                     "%Y-%m-%dT%H:%M:%S.%f")
             for key, val in kwargs.items():
                 if "__class__" not in key:
                     setattr(self, key, val)
@@ -27,7 +27,7 @@ class BaseModel:
     def __str__(self):
         """ return string representation of basemodel"""
         return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                     self.id, self.__dict__))
+                                      self.id, self.__dict__))
 
     def save(self):
         """ updates the public instance attribute updated_at"""
