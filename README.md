@@ -31,7 +31,7 @@ Documented commands (type help <topic>):
 ========================================
 EOF  all  create  destroy  help  quit  show  update
 
-(hbnb) 
+(hbnb)
 $ echo "create User" | ./console.py
 (hbnb) 1688806b-ba54-4a86-aed7-5e24a07f5bf4
 (hbnb)
@@ -52,7 +52,7 @@ $
 | `all` | all | prints a string representation of all instances |
 | `show` | show \<class> \<id> | prints a string representation of an instance |
 | `quit` | quit | exits the command interpreter |
-  
+
 ### Existing classes
 * Basemodel
 * User
