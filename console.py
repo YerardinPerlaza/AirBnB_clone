@@ -175,5 +175,20 @@ class HBNBCommand(cmd.Cmd):
                 obj_list.append(val)
         print(len(obj_list))
 
+    def default(self, args):
+        """all function names that are not expicitly defined"""
+        functions = {"all": self.do_all, "update": self.do_update,
+                     "show": self.do_show, "count": self.do_count,
+                     "destroy": self.do_destroy, "update": self.do_update}
+        args = (args.replace("(", ".").replace(")", ".")
+                .replace('"', "").replace(",", "").split("."))
+
+        try:
+            cmd_arg = args[0] + " " + args[2]
+            func = functions[args[1]]
+            func(cmd_arg)
+        except:
+            print("*** Unknown syntax:", args[0])
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
