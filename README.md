@@ -8,8 +8,40 @@ We've developed a command interpreter that can be activated and perform certain 
 ```
 git clone git@github.com:YerardinPerlaza/AirBnB_clone.git
 ```
-
 ### Command interpreter usage
+Interactive mode
+```
+$ ./console.py
+(hbnb)
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb)
+(hbnb) quit
+```
+
+Non-interactive mode
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb) 
+$ echo "create User" | ./console.py
+(hbnb) 1688806b-ba54-4a86-aed7-5e24a07f5bf4
+(hbnb)
+$ echo "create BaseModel" | ./console.py
+(hbnb) 4a130742-b6a2-4e55-b6ba-a00830a1f637
+(hbnb)
+$
+```
+
+### Command interpreter commands
 
 | Commands | Usage | Function |
 | :---: | :---: | :---: |
@@ -29,3 +61,8 @@ git clone git@github.com:YerardinPerlaza/AirBnB_clone.git
 * Amenity
 * Place
 * Review
+
+### Authors
+
+[![name](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/YerardinPerlaza) Yerardin Perlaza
+[![name](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/SantiagoHolber) Santiago Cano
