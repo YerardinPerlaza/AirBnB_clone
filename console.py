@@ -157,24 +157,24 @@ class HBNBCommand(cmd.Cmd):
             pass
 
         def do_count(self, args):
-        """Count number of instances"""
-        obj_list = []
-        storage = FileStorage()
-        storage.reload()
-        objects = storage.all()
-        try:
-            if len(args) != 0:
-                eval(args)
-        except NameError:
-            print("** class doesn't exist **")
-            return
-        for key, val in objects.items():
-            if len(args) != 0:
-                if type(val) is eval(args):
+            """Count number of instances"""
+            obj_list = []
+            storage = FileStorage()
+            storage.reload()
+            objects = storage.all()
+            try:
+                if len(args) != 0:
+                    eval(args)
+            except NameError:
+                print("** class doesn't exist **")
+                return
+            for key, val in objects.items():
+                if len(args) != 0:
+                    if type(val) is eval(args):
+                        obj_list.append(val)
+                else:
                     obj_list.append(val)
-            else:
-                obj_list.append(val)
-        print(len(obj_list))
+            print(len(obj_list))
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

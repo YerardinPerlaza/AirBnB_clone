@@ -35,7 +35,7 @@ class TestBase(unittest.TestCase):
     def test_a_updated_created_equal(self):
         """Checks that both dates are equal"""
         self.assertEqual(self.my_model.updated_at.year,
-                        self.my_model.created_at.year)
+                         self.my_model.created_at.year)
 
     def test_save(self):
         """Checks that after updating the date"""
@@ -72,7 +72,7 @@ class TestBase(unittest.TestCase):
         """Test that the new_model's updated_at data type is datetime"""
         my_model_dict = self.my_model.to_dict()
         new_model = BaseModel(my_model_dict)
-      self.assertTrue(isinstance(new_model.created_at, datetime.datetime))
+        self.assertTrue(isinstance(new_model.created_at, datetime.datetime))
 
     def test_type_updated_at(self):
         """Test that the new_model's created_at data type is datetime"""
