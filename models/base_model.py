@@ -29,6 +29,11 @@ class BaseModel:
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.id, self.__dict__))
 
+    def __repr__(self):
+        """Return string representation of BaseModel class"""
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                      self.id, self.__dict__))
+
     def save(self):
         """ updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
