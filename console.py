@@ -3,7 +3,6 @@
 import cmd
 import json
 import shlex
-from models import storage
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
@@ -29,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """display an empty line"""
+        """an empty line"""
         pass
 
     def do_create(self, args):
