@@ -47,10 +47,10 @@ $
 | :---: | :---: | :---: |
 | `help` | help | displays all commands available |
 | `create` | create \<class> | creates a new instance |
-| `destroy` | destroy \<class> | deletes an existing instance |
-| `update` | placeholder text | updates an attribute of an existing instance |
+| `destroy` | destroy \<class> \<id> | deletes an existing instance |
+| `update` | update \<class> \<id> \<attribute> | updates an attribute of an existing instance |
 | `all` | all | prints a string representation of all instances |
-| `show` | placeholder text | prints a string representation of an instance |
+| `show` | show \<class> \<id> | prints a string representation of an instance |
 | `quit` | quit | exits the command interpreter |
   
 ### Existing classes
