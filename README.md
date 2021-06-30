@@ -17,7 +17,7 @@ git clone git@github.com:YerardinPerlaza/AirBnB_clone.git
 | `create` | create \<class> | creates a new instance |
 | `destroy` | destroy \<class> | deletes an existing instance |
 | `update` | placeholder text | updates an attribute of an existing instance |
-| `all` | placeholder text | prints a string representation of all instances |
+| `all` | all | prints a string representation of all instances |
 | `show` | placeholder text | prints a string representation of an instance |
 | `quit` | quit | exits the command interpreter |
   
