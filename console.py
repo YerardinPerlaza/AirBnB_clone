@@ -28,6 +28,10 @@ class HBNBCommand(cmd.Cmd):
         """exit the program"""
         return True
 
+    def emptyline(self):
+        """display an empty line"""
+        pass
+
     def do_create(self, args):
         """Creates a new instance of BaseModel"""
         if len(args) == 0:
@@ -152,29 +156,25 @@ class HBNBCommand(cmd.Cmd):
         setattr(obj_value, args[2], args[3])
         obj_value.save()
 
-        def emptyline(self):
-            """display an empty line"""
-            pass
-
-        def do_count(self, args):
-            """Count number of instances"""
-            obj_list = []
-            storage = FileStorage()
-            storage.reload()
-            objects = storage.all()
-            try:
-                if len(args) != 0:
-                    eval(args)
-            except NameError:
-                print("** class doesn't exist **")
-                return
-            for key, val in objects.items():
-                if len(args) != 0:
-                    if type(val) is eval(args):
-                        obj_list.append(val)
-                else:
+    def do_count(self, args):
+        """Count number of instances"""
+        obj_list = []
+        storage = FileStorage()
+        storage.reload()
+        objects = storage.all()
+        try:
+            if len(args) != 0:
+                eval(args)
+        except NameError:
+            print("** class doesn't exist **")
+            return
+        for key, val in objects.items():
+            if len(args) != 0:
+                if type(val) is eval(args):
                     obj_list.append(val)
-            print(len(obj_list))
+            else:
+                obj_list.append(val)
+        print(len(obj_list))
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
