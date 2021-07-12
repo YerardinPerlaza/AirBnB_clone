@@ -112,16 +112,25 @@
   padding-left: 0;
 }
 .pet{
-    background: url("../images/icon_pets.png") no-repeat top left;
-    height: inherit;
-    width: inherit;
-    margin-left: 0;
+    background: url("../images/icon_pets.png") no-repeat;
+    background-position: left;
+    background-size: 20px;
+    padding-left: 0;
 }
+
 .tv{
     background: url("../images/icon_tv.png") no-repeat top left;
-    width: 100px;
+    background-position: left;
+    background-size: 20px;
 }
+
 .wifi{
     background: url("../images/icon_wifi.png") no-repeat top  left;
-    width: 100px;
+    background-position: left;
+    background-size: 20px;
+}
+
+.pet p, .tv p, .wifi p{
+  margin-left: 20px;
+  margin-bottom: 0;
 }
